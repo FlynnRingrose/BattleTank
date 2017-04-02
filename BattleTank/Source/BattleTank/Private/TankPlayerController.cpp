@@ -1,6 +1,7 @@
 // Flynn's rad copyright.
 
 #include "BattleTank.h"
+#include "Tank.h"
 #include "TankPlayerController.h"
 
 void ATankPlayerController::BeginPlay()
