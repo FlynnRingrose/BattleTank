@@ -7,6 +7,7 @@
 
 //This is a forward declaration. It allows us to avoid chains of dependencies from #includes.
 class UTankBarrel;
+class UTankTurret;
 
 //Holds barrel's properties and Elevate method.
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -20,6 +21,8 @@ public:
     
     void SetBarrelReference(UTankBarrel* BarrelToSet); //This is a setter for our private "Barrel" variable below.
     
+    void SetTurretReference(UTankTurret* TurretToSet);
+    
     //TODO add SetTurretReference
     
     void AimAt(FVector HitLocation, float LaunchSpeed);
@@ -27,5 +30,9 @@ public:
 private:
     UTankBarrel* Barrel = nullptr; //This knows what a UTankBarrel is thanks to our forward declaration.
     
+    UTankTurret* Turret = nullptr;
+    
     void MoveBarrelTowards(FVector AimDirection);
+    
+    void MoveTurretTowards(FVector AimDirection);
 };

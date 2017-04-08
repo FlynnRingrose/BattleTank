@@ -1,5 +1,3 @@
-// Flynn's rad copyright.
-
 #pragma once
 
 #include "GameFramework/PlayerController.h"

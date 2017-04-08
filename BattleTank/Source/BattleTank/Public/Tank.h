@@ -1,5 +1,3 @@
-// Flynn's rad copyright.
-
 #pragma once
 
 #include "GameFramework/Pawn.h"
@@ -7,6 +5,7 @@
 
 //Forward declarations.
 class UTankBarrel;
+class UTankTurret;
 class UTankAimingComponent;
 
 UCLASS()
@@ -19,6 +18,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Category = Setup) //No semicolon on this macro.
     void SetBarrelReference(UTankBarrel* BarrelToSet); //This is the setter for our private "Barrel".
+    
+    UFUNCTION(BlueprintCallable, Category = Setup) //You're so cool.
+    void SetTurretReference(UTankTurret* TurretToSet);
     
 protected:
     UTankAimingComponent* TankAimingComponent = nullptr;
@@ -34,5 +36,5 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
     
     UPROPERTY(EditAnywhere, Category = Firing)
-    float LaunchSpeed = 100000; //TODO Find a sensible default.
+    float LaunchSpeed = 4000;
 };

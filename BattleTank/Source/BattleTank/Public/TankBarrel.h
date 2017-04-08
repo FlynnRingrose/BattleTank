@@ -1,5 +1,3 @@
-// Flynn's rad copyright.
-
 #pragma once
 
 #include "Components/StaticMeshComponent.h"
@@ -16,7 +14,7 @@ public:
     
 private:
     UPROPERTY(EditAnywhere, Category = Setup)
-    float MaxDegreesPerSecond = 5; //Sensible default. These can be edited in Unreal.
+    float MaxDegreesPerSecond = 10; //Sensible default. These can be edited in Unreal.
     
     UPROPERTY(EditAnywhere, Category = Setup)
     float MaxElevationDegrees = 40;
