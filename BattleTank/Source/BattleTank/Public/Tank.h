@@ -1,4 +1,4 @@
-#pragma once
+
 
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h" //Put new includes above this line.
@@ -14,13 +14,16 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-    void AimAt(FVector Hitlocation);
-    
     UFUNCTION(BlueprintCallable, Category = Setup) //No semicolon on this macro.
     void SetBarrelReference(UTankBarrel* BarrelToSet); //This is the setter for our private "Barrel".
     
     UFUNCTION(BlueprintCallable, Category = Setup) //You're so cool.
     void SetTurretReference(UTankTurret* TurretToSet);
+    
+    void AimAt(FVector Hitlocation);
+    
+    UFUNCTION(BlueprintCallable, Category = Firing) //Fire ze missiles!
+    void Fire();
     
 protected:
     UTankAimingComponent* TankAimingComponent = nullptr;
