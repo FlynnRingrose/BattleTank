@@ -1,12 +1,14 @@
-
+#pragma once
 
 #include "GameFramework/Pawn.h"
+#include "TankBarrel.h"
 #include "Tank.generated.h" //Put new includes above this line.
 
 //Forward declarations.
 class UTankBarrel;
 class UTankTurret;
 class UTankAimingComponent;
+class AProjectile;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -40,4 +42,11 @@ private:
     
     UPROPERTY(EditAnywhere, Category = Firing)
     float LaunchSpeed = 4000;
+    
+    UPROPERTY(EditAnywhere, Category = Setup)
+    TSubclassOf<AProjectile> ProjectileBlueprint; //Unlike UClass*, this will only make the projectile available in the editor.
+    
+    //Local barrel reference to spawning projectile.
+    UTankBarrel* Barrel = nullptr;
+    
 };
