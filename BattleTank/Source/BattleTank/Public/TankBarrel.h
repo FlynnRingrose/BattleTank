@@ -13,12 +13,12 @@ public:
     void Elevate(float RelativeSpeed);
     
 private:
-    UPROPERTY(EditAnywhere, Category = Setup)
+    UPROPERTY(EditDefaultsOnly, Category = "Setup")
     float MaxDegreesPerSecond = 10; //Sensible default. These can be edited in Unreal.
     
-    UPROPERTY(EditAnywhere, Category = Setup)
+    UPROPERTY(EditDefaultsOnly, Category = "Setup")
     float MaxElevationDegrees = 40;
     
-    UPROPERTY(EditAnywhere, Category = Setup)
+    UPROPERTY(EditDefaultsOnly, Category = "Setup")
     float MinElevationDegrees = 0;
 };
