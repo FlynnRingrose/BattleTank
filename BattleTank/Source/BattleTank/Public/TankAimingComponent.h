@@ -38,7 +38,7 @@ public:
     EFiringState GetFiringState() const;
     
     UFUNCTION(BlueprintCallable, Category = "Firing")
-    int GetRoundsLeft() const;
+    int32 GetRoundsLeft() const;
     
 protected:
     UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -59,18 +59,19 @@ private:
     UTankBarrel* Barrel = nullptr; //This knows what a UTankBarrel is thanks to our forward declaration.
     UTankTurret* Turret = nullptr;
     
-    UPROPERTY(EditDefaultsOnly, Category = "Firing")
-    float LaunchSpeed = 4000;
-    
     UPROPERTY(EditDefaultsOnly, Category = "Setup")
     TSubclassOf<AProjectile> ProjectileBlueprint; //Unlike UClass*, this will only make the projectile available in the editor.
     
     UPROPERTY(EditDefaultsOnly, Category = "Firing")
+    float LaunchSpeed = 4000;
+    
+    UPROPERTY(EditDefaultsOnly, Category = "Firing")
     float ReloadTimeInSeconds = 3;
+    
+    UPROPERTY(EditDefaultsOnly, Category = "Firing")
+    int32 RoundsLeft = 3;
     
     double LastFireTime = 0;
     
     FVector AimDirection;
-    
-    int RoundsLeft = 3;
 };
