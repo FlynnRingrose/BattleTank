@@ -18,8 +18,13 @@ protected:
     UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
     void FoundAimingComponent(UTankAimingComponent* AimCompRef);
     
+    UFUNCTION()
+    void OnPossessedTankDeath();
+    
 private:
     virtual void BeginPlay() override; //"virtual" will allow this variable to be overidden later if need be.
+    
+    virtual void SetPawn(APawn* InPawn) override;
     
     virtual void Tick( float DeltaTime ) override; //"Override checks that there is a method with exactly the same name in the parent class.
     
